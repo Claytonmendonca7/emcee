@@ -17,9 +17,18 @@
         body {
             font-family: 'Inter', sans-serif;
             background-color: #0d0e11; /* Solid dark background for crisp text contrast */
+            scroll-behavior: smooth;
         }
         .serif-font {
             font-family: 'Playfair Display', serif;
+        }
+        /* Smooth fade-in animation for the hidden form */
+        .fade-in {
+            animation: fadeIn 0.6s ease forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
@@ -30,14 +39,20 @@
         <div class="text-sm font-bold tracking-[0.3em] text-white">
             CLAYTON MENDONCA
         </div>
-        <div class="flex items-center gap-3 bg-zinc-900 border border-zinc-800 px-4 py-1.5 rounded text-[11px] tracking-widest uppercase text-zinc-300 font-semibold">
-            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-            Booking Season '26
+        <div class="flex items-center gap-4">
+            <!-- Click-to-call Phone Link -->
+            <a href="tel:+919167015138" class="hidden sm:inline-block text-xs font-semibold tracking-wider text-zinc-300 hover:text-white transition-colors">
+                <i class="fa-solid fa-phone mr-1.5 text-emerald-500"></i> +91 9167015138
+            </a>
+            <div class="flex items-center gap-3 bg-zinc-900 border border-zinc-800 px-4 py-1.5 rounded text-[11px] tracking-widest uppercase text-zinc-300 font-semibold">
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                Booking Season '26
+            </div>
         </div>
     </header>
 
-    <!-- MAIN CONTENT SECTION -->
-    <main class="container mx-auto px-8 flex flex-col items-center text-center my-auto relative z-10 max-w-4xl">
+    <!-- MAIN HERO SECTION -->
+    <main class="container mx-auto px-8 flex flex-col items-center text-center my-auto relative z-10 max-w-4xl mt-12 mb-24">
         
         <!-- High Contrast Subheading -->
         <span class="text-xs uppercase tracking-[0.4em] text-zinc-400 mb-6 block font-bold">
@@ -56,7 +71,7 @@
         <!-- Construction Content Box -->
         <div class="mt-4 max-w-2xl bg-zinc-900/40 p-8 rounded-lg border border-zinc-800/80 backdrop-blur-sm">
             <p class="text-zinc-300 text-base md:text-lg font-normal leading-relaxed tracking-wide">
-                A refined digital portfolio is currently under curation.<br>Bringing absolute clarity, seamless flow and unparalleled energy to premium corporate, social and Family live events.</br>
+                A refined digital portfolio is currently under curation. Bringing absolute clarity, seamless flow, and unparalleled energy to premium corporate, social, and global live events.
             </p>
             
             <!-- High-Visibility Coming Soon Banner -->
@@ -65,36 +80,170 @@
             </div>
         </div>
 
-        <!-- Universal Cross-Platform WhatsApp Link -->
-        <div class="mt-12">
-            <!-- REPLACE 919999999999 WITH YOUR COUNTRY CODE AND PHONE NUMBER WITH NO SPACES OR SPECIAL CHARACTERS -->
-            <a href="https://wa.me/9167015138?text=Hi%20Clayton,%20I%20would%20like%20to%20inquire%20about%20booking%20your%20services%20for%20an%20event." 
+        <!-- Action Grid -->
+        <div class="mt-12 flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-md">
+            <!-- JS Trigger: Reveals and scrolls to the form section down page -->
+            <button onclick="showInquiryForm()" class="w-full sm:w-auto text-center bg-white hover:bg-zinc-200 text-black font-bold tracking-widest text-xs uppercase px-8 py-4 transition-all duration-200 ease-in-out shadow-lg cursor-pointer">
+                Book via Secure Form
+            </button>
+            
+            <!-- Universal WhatsApp Routing Link with Verified Number -->
+            <a href="https://wa.me/919167015138?text=Hi%20Clayton,%20I%20would%20like%20to%20inquire%20about%20booking%20your%20services%20for%20an%20event." 
                target="_blank" 
                rel="noopener noreferrer" 
-               class="inline-block bg-white hover:bg-zinc-200 text-black font-bold tracking-widest text-xs uppercase px-10 py-4 transition-all duration-200 ease-in-out shadow-lg">
-                <i class="fa-brands fa-whatsapp mr-2 text-base align-middle"></i> Inquire For Bookings
+               class="w-full sm:w-auto text-center bg-zinc-900 hover:bg-zinc-800 text-white border border-zinc-700 font-bold tracking-widest text-xs uppercase px-8 py-4 transition-all duration-200 ease-in-out">
+                <i class="fa-brands fa-whatsapp mr-2 text-base align-middle text-emerald-500"></i> WhatsApp Chat
             </a>
         </div>
     </main>
 
+    <!-- HIDDEN FORM SECTION (Toggled via JS) -->
+    <section id="inquiry-section" class="container mx-auto px-8 max-w-2xl mb-24 hidden scroll-mt-12">
+        <div class="bg-zinc-900/60 p-8 sm:p-10 rounded-xl border border-zinc-800/80 backdrop-blur-sm shadow-2xl">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-bold text-white serif-font tracking-wide mb-2">Event Booking Inquiry</h2>
+                <p class="text-xs uppercase tracking-widest text-zinc-400">Provide details below to receive a custom quote</p>
+            </div>
+
+            <!-- Intercepted by JavaScript below to block target redirects -->
+            <form id="booking-form" action="https://formspree.io/f/mqejvdzd" method="POST" class="space-y-6">
+                
+                <!-- Client/Company Name -->
+                <div>
+                    <label class="block text-xs uppercase tracking-wider text-zinc-400 font-bold mb-2">Your Name / Organization *</label>
+                    <input type="text" name="name" required class="w-full bg-zinc-950 border border-zinc-800 rounded px-4 py-3 text-white focus:outline-none focus:border-zinc-500 text-sm transition-colors" placeholder="John Doe / ABC Corp">
+                </div>
+
+                <!-- Contact Mechanics -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-zinc-400 font-bold mb-2">Email Address *</label>
+                        <input type="email" name="email" required class="w-full bg-zinc-950 border border-zinc-800 rounded px-4 py-3 text-white focus:outline-none focus:border-zinc-500 text-sm transition-colors" placeholder="name@company.com">
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-zinc-400 font-bold mb-2">Contact Number *</label>
+                        <input type="tel" name="phone" required class="w-full bg-zinc-950 border border-zinc-800 rounded px-4 py-3 text-white focus:outline-none focus:border-zinc-500 text-sm transition-colors" placeholder="+91 XXXXX XXXXX">
+                    </div>
+                </div>
+
+                <!-- Event Details -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-zinc-400 font-bold mb-2">Event Type *</label>
+                        <select name="event-type" required class="w-full bg-zinc-950 border border-zinc-800 rounded px-4 py-3 text-white focus:outline-none focus:border-zinc-500 text-sm transition-colors appearance-none">
+                            <option value="" disabled selected>Select event scale</option>
+                            <option value="Corporate">Corporate Event / Summit</option>
+                            <option value="Concert">Concert / Music Festival</option>
+                            <option value="Wedding">Wedding / Social Gala</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-zinc-400 font-bold mb-2">Tentative Date *</label>
+                        <input type="date" name="date" required class="w-full bg-zinc-950 border border-zinc-800 rounded px-4 py-3 text-white focus:outline-none focus:border-zinc-500 text-sm transition-colors">
+                    </div>
+                </div>
+
+                <!-- Location details -->
+                <div>
+                    <label class="block text-xs uppercase tracking-wider text-zinc-400 font-bold mb-2">Event Venue / City *</label>
+                    <input type="text" name="location" required class="w-full bg-zinc-950 border border-zinc-800 rounded px-4 py-3 text-white focus:outline-none focus:border-zinc-500 text-sm transition-colors" placeholder="e.g., Grand Hyatt, Mumbai">
+                </div>
+
+                <!-- Extra Custom Context Info -->
+                <div>
+                    <label class="block text-xs uppercase tracking-wider text-zinc-400 font-bold mb-2">Brief details</label>
+                    <textarea name="message" rows="4" class="w-full bg-zinc-950 border border-zinc-800 rounded px-4 py-3 text-white focus:outline-none focus:border-zinc-500 text-sm transition-colors resize-none" placeholder="Describe the crowd size or special instructions..."></textarea>
+                </div>
+
+                <!-- Submission Event Hook -->
+                <button type="submit" id="submit-btn" class="w-full bg-white hover:bg-zinc-200 text-black font-bold tracking-widest text-xs uppercase py-4 transition-all duration-200 ease-in-out shadow-lg cursor-pointer">
+                    Submit Secure Inquiry
+                </button>
+            </form>
+        </div>
+    </section>
+
     <!-- FOOTER -->
     <footer class="container mx-auto px-8 py-8 border-t border-zinc-900 flex flex-col sm:flex-row justify-between items-center gap-6 relative z-10 text-[11px] tracking-wider text-zinc-400 uppercase font-medium">
-        <div class="text-zinc-400">
-            &copy; 2026 Clayton Mendonca
+        <div>
+            &copy; 2026 Clayton Mendonca.
         </div>
         
-        <!-- Only Instagram Link Remaining -->
-        <div class="flex gap-8 text-base">
-            <!-- REPLACE THE # WITH YOUR ACTUAL INSTAGRAM LINK -->
-            <a href="https://instagram.com/clayton.emcee" target="_blank" rel="noopener noreferrer" class="text-zinc-300 hover:text-white transition-colors duration-200 flex items-center gap-2 font-semibold tracking-wider text-xs" aria-label="Instagram">
+        <!-- Instagram Verified Handle + Mobile Responsive Call Action -->
+        <div class="flex gap-8 text-base items-center">
+            <a href="tel:+919167015138" class="sm:hidden text-zinc-300 hover:text-white" aria-label="Call"><i class="fa-solid fa-phone"></i></a>
+            <a href="https://instagram.com/clayton.emcee" target="_blank" rel="noopener noreferrer" class="text-zinc-300 hover:text-white flex items-center gap-2 font-semibold tracking-wider text-xs" aria-label="Instagram">
                 <i class="fa-brands fa-instagram text-lg"></i> @clayton.emcee
             </a>
         </div>
         
         <div class="text-[10px] text-zinc-400 tracking-[0.2em] font-semibold">
-            Creating Surreal Moments
+            Curating Experiences Worldwide
         </div>
     </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Shows the form container smoothly when clicking "Book via Secure Form"
+        function showInquiryForm() {
+            const formSection = document.getElementById('inquiry-section');
+            formSection.classList.remove('hidden');
+            formSection.classList.add('fade-in');
+            formSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Submits the form data in the background without refreshing or redirecting
+        const form = document.getElementById('booking-form');
+        const submitBtn = document.getElementById('submit-btn');
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault(); // Blocks the traditional redirection flow
+            
+            submitBtn.disabled = true;
+            submitBtn.innerText = "SENDING INQUIRY...";
+            submitBtn.className = "w-full bg-zinc-800 text-zinc-400 font-bold tracking-widest text-xs uppercase py-4 transition-all duration-200 cursor-not-allowed";
+
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    // Success State Treatment
+                    submitBtn.innerText = "MESSAGE SENT SUCCESSFULLY!";
+                    submitBtn.className = "w-full bg-emerald-600 text-white font-bold tracking-widest text-xs uppercase py-4 transition-all duration-200";
+                    form.reset();
+
+                    // Automatically collapse and hide the form smoothly after 3 seconds
+                    setTimeout(() => {
+                        const formSection = document.getElementById('inquiry-section');
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        
+                        setTimeout(() => {
+                            formSection.classList.add('hidden');
+                            // Reset button status for future inquiries
+                            submitBtn.disabled = false;
+                            submitBtn.innerText = "Submit Secure Inquiry";
+                            submitBtn.className = "w-full bg-white hover:bg-zinc-200 text-black font-bold tracking-widest text-xs uppercase py-4 transition-all duration-200 ease-in-out shadow-lg cursor-pointer";
+                        }, 500);
+                    }, 3000);
+
+                } else {
+                    throw new Error();
+                }
+            } catch (error) {
+                // Error Fallback State Treatment
+                submitBtn.innerText = "Submission Failed. Try Again.";
+                submitBtn.className = "w-full bg-red-600 text-white font-bold tracking-widest text-xs uppercase py-4 transition-all duration-200";
+                submitBtn.disabled = false;
+            }
+        });
+    </script>
 
 </body>
 </html>
