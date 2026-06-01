@@ -76,7 +76,7 @@
             
             <!-- High-Visibility Coming Soon Banner -->
             <div class="mt-8 inline-block bg-zinc-800 text-white font-bold text-xs uppercase tracking-[0.5em] px-6 py-2 border border-zinc-700">
-                Under Construction &bull; Coming Soon
+                Under Construction! <BR> Coming Soon</BR>
             </div>
         </div>
 
@@ -175,7 +175,7 @@
         <div class="flex gap-8 text-base items-center">
             <a href="tel:+919167015138" class="sm:hidden text-zinc-300 hover:text-white" aria-label="Call"><i class="fa-solid fa-phone"></i></a>
             <a href="https://instagram.com/clayton.emcee" target="_blank" rel="noopener noreferrer" class="text-zinc-300 hover:text-white flex items-center gap-2 font-semibold tracking-wider text-xs" aria-label="Instagram">
-                <i class="fa-brands fa-instagram text-lg"></i> @clayton.emcee
+                <i class="fa-brands fa-instagram text-lg"></i>
             </a>
         </div>
         
@@ -202,7 +202,7 @@
             e.preventDefault(); // Blocks the traditional redirection flow
             
             submitBtn.disabled = true;
-            submitBtn.innerText = "SENDING INQUIRY...";
+            submitBtn.innerText = "SENDING INQUIRY..";
             submitBtn.className = "w-full bg-zinc-800 text-zinc-400 font-bold tracking-widest text-xs uppercase py-4 transition-all duration-200 cursor-not-allowed";
 
             const formData = new FormData(form);
@@ -229,7 +229,7 @@
                             formSection.classList.add('hidden');
                             // Reset button status for future inquiries
                             submitBtn.disabled = false;
-                            submitBtn.innerText = "Submit Secure Inquiry";
+                            submitBtn.innerText = "Submit Inquiry";
                             submitBtn.className = "w-full bg-white hover:bg-zinc-200 text-black font-bold tracking-widest text-xs uppercase py-4 transition-all duration-200 ease-in-out shadow-lg cursor-pointer";
                         }, 500);
                     }, 3000);
