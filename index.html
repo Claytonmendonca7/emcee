@@ -48,7 +48,6 @@
 </head>
 <body class="min-h-screen flex flex-col justify-between overflow-x-hidden selection:bg-neutral-900 selection:text-white">
 
-    <!-- Premium Brand Header -->
     <header class="w-full px-6 sm:px-12 py-8 flex justify-between items-center max-w-7xl mx-auto relative z-10">
         <div class="text-[10px] font-bold tracking-[0.3em] text-neutral-900 uppercase">CLAYTON MENDONCA</div>
         <div class="flex items-center gap-4">
@@ -61,7 +60,6 @@
         </div>
     </header>
 
-    <!-- Main Editorial Display -->
     <main class="w-full px-6 flex flex-col items-center text-center my-auto relative z-10 max-w-4xl mx-auto py-4">
         <span class="text-[9px] uppercase tracking-[0.45em] text-neutral-400 mb-3 block font-bold">Master of Ceremonies & Host</span>
 
@@ -76,44 +74,50 @@
             </p>
         </div>
 
-        <!-- Portfolio Sections Clean Grid Layout -->
         <div class="w-full max-w-2xl mx-auto grid grid-cols-2 gap-4 px-2">
             
-            <!-- Corporate -->
-            <button onclick="openStories('corporate')" class="group relative bg-white border border-neutral-200/60 p-6 rounded-2xl text-left flex flex-col justify-between h-28 transition-all hover:border-neutral-950 active:scale-[0.98] shadow-2xs">
+            <button onclick="openStories('corporate')" class="group relative bg-white border border-neutral-200/60 p-5 rounded-2xl text-left flex flex-col justify-between h-28 transition-all hover:border-neutral-950 active:scale-[0.98] shadow-2xs">
                 <div class="w-7 h-7 bg-neutral-50 border border-neutral-100 rounded-lg flex items-center justify-center text-neutral-600 group-hover:bg-neutral-950 group-hover:text-white transition-colors">
                     <i class="fa-solid fa-building text-xs"></i>
                 </div>
-                <h4 class="text-xs font-bold tracking-widest uppercase text-neutral-800">Corporate</h4>
+                <div>
+                    <h4 class="text-xs font-bold tracking-widest uppercase text-neutral-850">Corporate</h4>
+                    <span class="block text-[9px] text-neutral-400 font-medium tracking-wider mt-0.5 group-hover:text-neutral-600">See Images</span>
+                </div>
             </button>
 
-            <!-- Communion -->
-            <button onclick="openStories('Communion')" class="group relative bg-white border border-neutral-200/60 p-6 rounded-2xl text-left flex flex-col justify-between h-28 transition-all hover:border-neutral-950 active:scale-[0.98] shadow-2xs">
+            <button onclick="openStories('Communion')" class="group relative bg-white border border-neutral-200/60 p-5 rounded-2xl text-left flex flex-col justify-between h-28 transition-all hover:border-neutral-950 active:scale-[0.98] shadow-2xs">
                 <div class="w-7 h-7 bg-neutral-50 border border-neutral-100 rounded-lg flex items-center justify-center text-neutral-600 group-hover:bg-neutral-950 group-hover:text-white transition-colors">
                     <i class="fa-solid fa-dove text-xs"></i>
                 </div>
-                <h4 class="text-xs font-bold tracking-widest uppercase text-neutral-800">Communion</h4>
+                <div>
+                    <h4 class="text-xs font-bold tracking-widest uppercase text-neutral-850">Communion</h4>
+                    <span class="block text-[9px] text-neutral-400 font-medium tracking-wider mt-0.5 group-hover:text-neutral-600">See Images</span>
+                </div>
             </button>
 
-            <!-- Birthday -->
-            <button onclick="openStories('birthday')" class="group relative bg-white border border-neutral-200/60 p-6 rounded-2xl text-left flex flex-col justify-between h-28 transition-all hover:border-neutral-950 active:scale-[0.98] shadow-2xs">
+            <button onclick="openStories('birthday')" class="group relative bg-white border border-neutral-200/60 p-5 rounded-2xl text-left flex flex-col justify-between h-28 transition-all hover:border-neutral-950 active:scale-[0.98] shadow-2xs">
                 <div class="w-7 h-7 bg-neutral-50 border border-neutral-100 rounded-lg flex items-center justify-center text-neutral-600 group-hover:bg-neutral-950 group-hover:text-white transition-colors">
                     <i class="fa-solid fa-heart text-xs"></i>
                 </div>
-                <h4 class="text-xs font-bold tracking-widest uppercase text-neutral-800">Birthday</h4>
+                <div>
+                    <h4 class="text-xs font-bold tracking-widest uppercase text-neutral-850">Birthday</h4>
+                    <span class="block text-[9px] text-neutral-400 font-medium tracking-wider mt-0.5 group-hover:text-neutral-600">See Images</span>
+                </div>
             </button>
 
-            <!-- Anniversary -->
-            <button onclick="openStories('Anniversary')" class="group relative bg-white border border-neutral-200/60 p-6 rounded-2xl text-left flex flex-col justify-between h-28 transition-all hover:border-neutral-950 active:scale-[0.98] shadow-2xs">
+            <button onclick="openStories('Anniversary')" class="group relative bg-white border border-neutral-200/60 p-5 rounded-2xl text-left flex flex-col justify-between h-28 transition-all hover:border-neutral-950 active:scale-[0.98] shadow-2xs">
                 <div class="w-7 h-7 bg-neutral-50 border border-neutral-100 rounded-lg flex items-center justify-center text-neutral-600 group-hover:bg-neutral-950 group-hover:text-white transition-colors">
                     <i class="fa-solid fa-cake-candles text-xs"></i>
                 </div>
-                <h4 class="text-xs font-bold tracking-widest uppercase text-neutral-800">Anniversary</h4>
+                <div>
+                    <h4 class="text-xs font-bold tracking-widest uppercase text-neutral-850">Anniversary</h4>
+                    <span class="block text-[9px] text-neutral-400 font-medium tracking-wider mt-0.5 group-hover:text-neutral-600">See Images</span>
+                </div>
             </button>
 
         </div>
 
-        <!-- Action Control Buttons -->
         <div class="mt-12 flex flex-col sm:flex-row gap-3 justify-center items-center w-full max-w-sm px-4">
             <button onclick="toggleModal('inquiry-modal', true)" class="w-full text-center bg-neutral-950 hover:bg-neutral-900 text-white font-semibold tracking-widest text-[11px] uppercase py-4 rounded-xl transition-all shadow-sm active:scale-[0.97] cursor-pointer">
                 Direct Inquiry
@@ -126,29 +130,23 @@
         </div>
     </main>
 
-    <!-- High-End Immersive Story Component Box Viewport -->
     <div id="story-lightbox" class="fixed inset-0 bg-[#0a0a0c] z-[150] hidden flex items-center justify-center p-0 md:p-6 select-none transition-all">
         
         <div class="relative w-full h-full md:h-[90vh] md:max-w-[calc(90vh*9/16)] bg-black md:rounded-2xl overflow-hidden flex flex-col justify-between shadow-2xl">
             
-            <!-- Dynamic Subtle Background Underlay Blur Frame -->
             <div id="story-bg-blur" class="absolute inset-0 bg-cover bg-center blur-2xl scale-110 opacity-30 pointer-events-none transition-all duration-300"></div>
 
-            <!-- Absolute Media Locked Base Component -->
             <div class="absolute inset-0 flex items-center justify-center z-0">
                 <img id="story-image" src="" alt="Live Media Asset" class="w-full max-h-full object-contain hidden transition-all duration-300">
                 <video id="story-video" src="" playsinline webkit-playsinline class="w-full max-h-full object-contain hidden transition-all duration-300"></video>
             </div>
 
-            <!-- Loading Spinner Element: Isolated Z-index but set behind navigation overlay to keep close button active -->
             <div id="story-spinner" class="absolute inset-0 flex items-center justify-center bg-black/60 backdrop-blur-xs hidden z-10">
                 <div class="w-7 h-7 border-[3px] border-neutral-800 border-t-white rounded-full animate-spin"></div>
             </div>
 
-            <!-- Foreground Interaction & Meta Grid Layer -->
             <div class="relative w-full h-full flex flex-col justify-between z-20 p-4 pointer-events-none">
                 
-                <!-- Tracking Metrics Header Section (Always Available) -->
                 <div class="w-full pt-1 pointer-events-auto">
                     <div class="w-full flex gap-1.5 mb-3.5" id="story-progress-container"></div>
 
@@ -157,15 +155,13 @@
                             <div class="w-8 h-8 rounded-full bg-neutral-900 text-white flex items-center justify-center text-[10px] border border-neutral-700 font-bold shadow-md">CM</div>
                             <div>
                                 <div class="text-[11px] font-bold tracking-widest text-white drop-shadow-md" id="story-category-title">CLAYTON MENDONCA</div>
-                                <div class="text-[8px] text-neutral-300 uppercase tracking-widest font-semibold opacity-90 drop-shadow-sm">Live Showcase</div>
+                                <div class="text-[8px] text-neutral-300 uppercase tracking-widest font-semibold opacity-90 drop-shadow-sm">Portfolio</div>
                             </div>
                         </div>
-                        <!-- Close Button Top Layer Shell Interceptor -->
-                        <button onclick="closeStories()" class="text-white text-3xl p-1 opacity-70 hover:opacity-100 focus:outline-none transition-opacity cursor-pointer">&times;</button>
+                        <button onclick="closeStories(event)" class="text-white text-3xl p-1 opacity-70 hover:opacity-100 focus:outline-none transition-opacity cursor-pointer">&times;</button>
                     </div>
                 </div>
 
-                <!-- Touch Control Engine (Tap Left / Tap Right / Press & Hold Interceptor Channels) -->
                 <div class="absolute top-20 bottom-24 left-0 right-0 w-full flex pointer-events-auto" 
                      onmousedown="pauseStory()" onmouseup="resumeStory()" 
                      ontouchstart="pauseStory()" ontouchend="resumeStory()">
@@ -173,9 +169,8 @@
                     <div class="w-2/3 h-full cursor-pointer" onclick="storyNext(event)"></div>
                 </div>
 
-                <!-- Responsive Contextual Call Anchor Footer -->
                 <div class="w-full pb-2 pointer-events-auto">
-                    <button onclick="closeStories(); toggleModal('inquiry-modal', true)" class="w-full bg-white text-neutral-950 font-semibold tracking-widest text-[10px] uppercase py-4 rounded-xl shadow-md active:scale-[0.98] transition-transform">
+                    <button onclick="closeStories(event); toggleModal('inquiry-modal', true)" class="w-full bg-white text-neutral-950 font-semibold tracking-widest text-[10px] uppercase py-4 rounded-xl shadow-md active:scale-[0.98] transition-transform">
                         Book Now
                     </button>
                 </div>
@@ -185,7 +180,6 @@
         </div>
     </div>
 
-    <!-- Minimal Form Drawer Modal Layout -->
     <div id="inquiry-modal" class="fixed inset-0 bg-neutral-950/40 z-[100] hidden flex items-end sm:items-center justify-center p-0 sm:p-4 backdrop-blur-xs transition-opacity">
         <div class="bg-white w-full sm:max-w-lg max-h-[92vh] sm:max-h-[88vh] overflow-y-auto rounded-t-2xl sm:rounded-2xl shadow-xl animate-fade-up relative">
             
@@ -249,7 +243,6 @@
         </div>
     </div>
 
-    <!-- Structural Footer Layout -->
     <footer class="w-full px-6 sm:px-12 py-8 border-t border-neutral-200/50 flex flex-col sm:flex-row justify-between items-center gap-4 max-w-7xl mx-auto relative z-10 text-[9px] tracking-widest text-neutral-400 uppercase font-bold">
         <div>&copy; 2026 Clayton Mendonca</div>
         <div class="flex gap-6 text-base items-center">
@@ -432,7 +425,7 @@
 
         function storyNext(e) {
             if (e) e.stopPropagation();
-            if (!isAssetLoaded) return; // Ignore taps while asset is fetching
+            if (!isAssetLoaded) return; 
             cancelAnimationFrame(storyTimer);
             if (currentStoryIdx < currentActiveGroup.length - 1) {
                 currentStoryIdx++;
@@ -449,12 +442,13 @@
                 currentStoryIdx--;
                 renderCurrentStory();
             } else {
-                // If on the first story and user taps back, return safely to home page dashboard
+                // Returns straight to home landing section rather than forcing a route pop drop
                 closeStories();
             }
         }
 
-        function closeStories() {
+        function closeStories(e) {
+            if (e) e.stopPropagation();
             cancelAnimationFrame(storyTimer);
             isPaused = false;
             isAssetLoaded = false;
