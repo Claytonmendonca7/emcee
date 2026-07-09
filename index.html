@@ -19,13 +19,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
     
     <style>
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #faf9f5;
-            color: #121316;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fbfbfa;
+            color: #1a1a1e;
             scroll-behavior: smooth;
             -webkit-tap-highlight-color: transparent;
         }
@@ -34,153 +34,194 @@
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-        /* Premium Minimalist Modal Entry Animation */
-        .modal-enter {
-            animation: modalFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        .animate-fade-up {
+            animation: fadeUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
-        @keyframes modalFadeIn {
-            from { opacity: 0; transform: scale(0.97) translateY(10px); }
-            to { opacity: 1; transform: scale(1) translateY(0); }
-        }
-
-        /* High-End Polished Story Frame Ring */
-        .highlight-ring {
-            padding: 2.5px;
-            background: linear-gradient(135deg, #d4af37 0%, #a67c1e 100%);
-            border-radius: 50%;
-            box-shadow: 0 4px 12px rgba(166, 124, 30, 0.1);
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Micro progress bars mimicking real social architecture */
-        .progress-segment { background-color: rgba(255, 255, 255, 0.25); height: 2px; border-radius: 4px; overflow: hidden; flex-grow: 1; }
+        .progress-segment { background-color: rgba(255, 255, 255, 0.25); height: 2px; border-radius: 2px; overflow: hidden; flex-grow: 1; }
         .progress-fill { background-color: #ffffff; height: 100%; width: 0%; }
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between overflow-x-hidden selection:bg-neutral-900 selection:text-white">
 
     <!-- Premium Brand Header -->
-    <header class="container mx-auto px-6 sm:px-10 py-8 flex justify-between items-center relative z-10">
-        <div class="text-xs font-bold tracking-[0.3em] text-neutral-900 uppercase">CLAYTON MENDONCA</div>
+    <header class="w-full px-6 sm:px-12 py-8 flex justify-between items-center max-w-7xl mx-auto relative z-10">
+        <div class="text-[10px] font-bold tracking-[0.3em] text-neutral-900 uppercase">CLAYTON MENDONCA</div>
         <div class="flex items-center gap-4">
-            <a href="tel:+919167015138" class="hidden sm:inline-block text-[11px] font-bold tracking-widest text-neutral-500 hover:text-black transition-colors uppercase">
-                <i class="fa-solid fa-phone mr-2 text-neutral-800"></i> 9167015138
+            <a href="tel:+919167015138" class="hidden sm:inline-flex items-center text-[11px] font-semibold tracking-widest text-neutral-500 hover:text-black transition-colors uppercase">
+                <i class="fa-solid fa-phone mr-2 text-neutral-700 text-[10px]"></i> 9167015138
             </a>
-            <div class="flex items-center gap-2 bg-white border border-neutral-200/70 px-4 py-1.5 rounded-full text-[10px] tracking-widest uppercase text-neutral-700 font-bold shadow-xs">
-                <span class="w-1.5 h-1.5 rounded-full bg-neutral-900 animate-pulse"></span> Season '26
+            <div class="flex items-center gap-2 bg-neutral-950 text-white px-3.5 py-1.5 rounded-full text-[9px] tracking-widest uppercase font-medium shadow-sm">
+                <span class="w-1 h-1 rounded-full bg-emerald-400 animate-pulse"></span> Season '26
             </div>
         </div>
     </header>
 
-    <!-- Main Dynamic Core -->
-    <main class="container mx-auto px-6 sm:px-10 flex flex-col items-center text-center my-auto relative z-10 max-w-3xl mt-6 mb-16">
-        <span class="text-[10px] uppercase tracking-[0.45em] text-neutral-400 mb-5 block font-bold">Master of Ceremonies & Host</span>
+    <!-- Main Editorial Display -->
+    <main class="w-full px-6 flex flex-col items-center text-center my-auto relative z-10 max-w-4xl mx-auto py-4">
+        <span class="text-[9px] uppercase tracking-[0.45em] text-neutral-400 mb-3 block font-bold">Master of Ceremonies & Host</span>
 
-        <h1 class="text-4xl sm:text-6xl font-bold tracking-tight text-neutral-950 mb-6 serif-font leading-[1.15]">
-            Elevating the stage. <br>
-            <span class="italic text-neutral-600 font-normal">Energizing the room.</span>
+        <h1 class="text-4xl sm:text-[56px] font-normal tracking-tight text-neutral-950 mb-6 serif-font leading-[1.15]">
+            Elevating the stage.<br>
+            <span class="italic text-neutral-500 font-light">Energizing the room.</span>
         </h1>
 
-        <div class="w-10 h-[1px] bg-neutral-300 my-5"></div>
-
-        <div class="mt-2 max-w-xl bg-white p-6 sm:p-10 rounded-2xl border border-neutral-200/60 shadow-xl shadow-neutral-100/50 w-full backdrop-blur-md">
-            <p class="text-neutral-600 text-sm sm:text-base font-normal leading-relaxed tracking-wide mb-8">
-                A refined digital portfolio is currently under curation. <br class="hidden sm:block">
-                Bringing absolute clarity, seamless flow and unparalleled energy to premium corporate, social and live events.
+        <div class="max-w-md mx-auto w-full mb-10">
+            <p class="text-neutral-500 text-xs sm:text-sm font-normal leading-relaxed tracking-wide">
+                A refined digital portfolio is currently under curation. Bringing absolute clarity, seamless flow, and unparalleled energy to premium live parameters.
             </p>
-            <div class="inline-block bg-neutral-950 text-white rounded-lg px-8 py-4 font-bold tracking-widest text-[10px] uppercase shadow-md transition-all active:scale-[0.98]">
-                Coming Soon
-            </div>
         </div>
 
-        <!-- Experience Vault Section (Native feeling Snap Track) -->
-        <div class="mt-14 w-full max-w-md">
-            <h3 class="text-[12px] uppercase tracking-[0.35em] text-neutral-400 font-bold mb-6 mx-auto border-b border-neutral-200 pb-2 w-28">See Glimpse</h3>
+        <!-- Portfolio Sections Clean Grid Layout -->
+        <div class="w-full max-w-2xl mx-auto grid grid-cols-2 gap-4 px-2">
             
-            <div class="flex justify-center items-center gap-6 overflow-x-auto no-scrollbar py-2 w-full snap-x px-4">
-                
-                <!-- Highlight 1 -->
-                <button onclick="openStories('corporate')" class="flex flex-col items-center space-y-2.5 focus:outline-none group cursor-pointer snap-center shrink-0">
-                    <div class="highlight-ring transition-transform duration-300 active:scale-95 group-hover:scale-[1.03]">
-                        <div class="w-14 h-14 rounded-full border-2 border-white overflow-hidden bg-neutral-50 flex items-center justify-center">
-                            <i class="fa-solid fa-building text-base text-neutral-700"></i>
-                        </div>
-                    </div>
-                    <span class="text-[10px] tracking-wider text-neutral-600 font-bold uppercase">Corporate</span>
-                </button>
+            <!-- Corporate -->
+            <button onclick="openStories('corporate')" class="group relative bg-white border border-neutral-200/60 p-6 rounded-2xl text-left flex flex-col justify-between h-28 transition-all hover:border-neutral-950 active:scale-[0.98] shadow-2xs">
+                <div class="w-7 h-7 bg-neutral-50 border border-neutral-100 rounded-lg flex items-center justify-center text-neutral-600 group-hover:bg-neutral-950 group-hover:text-white transition-colors">
+                    <i class="fa-solid fa-building text-xs"></i>
+                </div>
+                <h4 class="text-xs font-bold tracking-widest uppercase text-neutral-800">Corporate</h4>
+            </button>
 
-                <button onclick="openStories('Communion')" class="flex flex-col items-center space-y-2.5 focus:outline-none group cursor-pointer snap-center shrink-0">
-                    <div class="highlight-ring transition-transform duration-300 active:scale-95 group-hover:scale-[1.03]">
-                        <div class="w-14 h-14 rounded-full border-2 border-white overflow-hidden bg-neutral-50 flex items-center justify-center">
-                            <i class="fa-solid fa-dove text-base text-neutral-700"></i>
-                        </div>
-                    </div>
-                    <span class="text-[10px] tracking-wider text-neutral-600 font-bold uppercase">Communion</span>
-                </button>
+            <!-- Communion -->
+            <button onclick="openStories('Communion')" class="group relative bg-white border border-neutral-200/60 p-6 rounded-2xl text-left flex flex-col justify-between h-28 transition-all hover:border-neutral-950 active:scale-[0.98] shadow-2xs">
+                <div class="w-7 h-7 bg-neutral-50 border border-neutral-100 rounded-lg flex items-center justify-center text-neutral-600 group-hover:bg-neutral-950 group-hover:text-white transition-colors">
+                    <i class="fa-solid fa-dove text-xs"></i>
+                </div>
+                <h4 class="text-xs font-bold tracking-widest uppercase text-neutral-800">Communion</h4>
+            </button>
 
-                <button onclick="openStories('birthday')" class="flex flex-col items-center space-y-2.5 focus:outline-none group cursor-pointer snap-center shrink-0">
-                    <div class="highlight-ring transition-transform duration-300 active:scale-95 group-hover:scale-[1.03]">
-                        <div class="w-14 h-14 rounded-full border-2 border-white overflow-hidden bg-neutral-50 flex items-center justify-center">
-                            <i class="fa-solid fa-heart text-base text-neutral-700"></i>
-                        </div>
-                    </div>
-                    <span class="text-[10px] tracking-wider text-neutral-600 font-bold uppercase">Birthday</span>
-                </button>
+            <!-- Birthday -->
+            <button onclick="openStories('birthday')" class="group relative bg-white border border-neutral-200/60 p-6 rounded-2xl text-left flex flex-col justify-between h-28 transition-all hover:border-neutral-950 active:scale-[0.98] shadow-2xs">
+                <div class="w-7 h-7 bg-neutral-50 border border-neutral-100 rounded-lg flex items-center justify-center text-neutral-600 group-hover:bg-neutral-950 group-hover:text-white transition-colors">
+                    <i class="fa-solid fa-heart text-xs"></i>
+                </div>
+                <h4 class="text-xs font-bold tracking-widest uppercase text-neutral-800">Birthday</h4>
+            </button>
 
-                <!-- Highlight 3 -->
-                <button onclick="openStories('Anniversary')" class="flex flex-col items-center space-y-2.5 focus:outline-none group cursor-pointer snap-center shrink-0">
-                    <div class="highlight-ring transition-transform duration-300 active:scale-95 group-hover:scale-[1.03]">
-                        <div class="w-14 h-14 rounded-full border-2 border-white overflow-hidden bg-neutral-50 flex items-center justify-center">
-                            <i class="fa-solid fa-cake-candles text-base text-neutral-700"></i>
-                        </div>
-                    </div>
-                    <span class="text-[10px] tracking-wider text-neutral-600 font-bold uppercase">Anniversary</span>
-                </button>
+            <!-- Anniversary -->
+            <button onclick="openStories('Anniversary')" class="group relative bg-white border border-neutral-200/60 p-6 rounded-2xl text-left flex flex-col justify-between h-28 transition-all hover:border-neutral-950 active:scale-[0.98] shadow-2xs">
+                <div class="w-7 h-7 bg-neutral-50 border border-neutral-100 rounded-lg flex items-center justify-center text-neutral-600 group-hover:bg-neutral-950 group-hover:text-white transition-colors">
+                    <i class="fa-solid fa-cake-candles text-xs"></i>
+                </div>
+                <h4 class="text-xs font-bold tracking-widest uppercase text-neutral-800">Anniversary</h4>
+            </button>
 
-            </div>
         </div>
 
-        <!-- Tactile Functional Conversions -->
+        <!-- Action Control Buttons -->
         <div class="mt-12 flex flex-col sm:flex-row gap-3 justify-center items-center w-full max-w-sm px-4">
-            <button onclick="toggleModal('inquiry-modal', true)" class="w-full sm:w-auto text-center bg-neutral-950 hover:bg-neutral-900 text-white font-bold tracking-widest text-xs uppercase px-8 py-4 rounded-lg transition-all shadow-md active:scale-[0.97] cursor-pointer">
+            <button onclick="toggleModal('inquiry-modal', true)" class="w-full text-center bg-neutral-950 hover:bg-neutral-900 text-white font-semibold tracking-widest text-[11px] uppercase py-4 rounded-xl transition-all shadow-sm active:scale-[0.97] cursor-pointer">
                 Direct Inquiry
             </button>
             <a href="https://wa.me/919167015138?text=Hi%20Clayton,%20I%20would%20like%20to%20inquire%20about%20booking%20your%20services%20for%20an%20event." 
                target="_blank" rel="noopener noreferrer" 
-               class="w-full sm:w-auto text-center bg-white hover:bg-neutral-50 text-neutral-950 border border-neutral-250 font-bold tracking-widest text-xs uppercase px-8 py-4 rounded-lg transition-all shadow-xs flex items-center justify-center gap-2 active:scale-[0.97]">
-                <i class="fa-brands fa-whatsapp text-base text-emerald-600"></i> WhatsApp Wire
+               class="w-full text-center bg-white hover:bg-neutral-50 text-neutral-950 border border-neutral-200/80 font-semibold tracking-widest text-[11px] uppercase py-4 rounded-xl transition-all shadow-2xs flex items-center justify-center gap-2 active:scale-[0.97]">
+                <i class="fa-brands fa-whatsapp text-sm text-emerald-600"></i> WhatsApp Wire
             </a>
         </div>
     </main>
 
-    <!-- Refined Event Booking Modal Layout -->
-    <div id="inquiry-modal" class="fixed inset-0 bg-neutral-950/35 z-[100] hidden flex items-center justify-center p-4 backdrop-blur-xs transition-opacity">
-        <div class="bg-white border border-neutral-100 w-full max-w-xl max-h-[88vh] overflow-y-auto rounded-2xl shadow-2xl modal-enter relative">
-            <button onclick="toggleModal('inquiry-modal', false)" class="absolute top-5 right-5 text-neutral-400 hover:text-neutral-900 text-2xl z-10 p-2 transition-colors">&times;</button>
-            <div class="p-6 sm:p-10">
-                <div class="text-center mb-6">
-                    <h2 class="text-2xl font-bold text-neutral-950 serif-font tracking-wide mb-1">Book the Stage</h2>
-                    <p class="text-[10px] uppercase tracking-widest text-neutral-400 font-bold">Please outline your event parameters below</p>
+    <!-- High-End Immersive Story Component Box Viewport -->
+    <div id="story-lightbox" class="fixed inset-0 bg-[#0a0a0c] z-[150] hidden flex items-center justify-center p-0 md:p-6 select-none transition-all">
+        
+        <div class="relative w-full h-full md:h-[90vh] md:max-w-[calc(90vh*9/16)] bg-black md:rounded-2xl overflow-hidden flex flex-col justify-between shadow-2xl">
+            
+            <!-- Dynamic Subtle Background Underlay Blur Frame -->
+            <div id="story-bg-blur" class="absolute inset-0 bg-cover bg-center blur-2xl scale-110 opacity-30 pointer-events-none transition-all duration-300"></div>
+
+            <!-- Absolute Media Locked Base Component -->
+            <div class="absolute inset-0 flex items-center justify-center z-0">
+                <img id="story-image" src="" alt="Live Media Asset" class="w-full max-h-full object-contain hidden transition-all duration-300">
+                <video id="story-video" src="" playsinline webkit-playsinline class="w-full max-h-full object-contain hidden transition-all duration-300"></video>
+            </div>
+
+            <!-- Loading Spinner Element: Isolated Z-index but set behind navigation overlay to keep close button active -->
+            <div id="story-spinner" class="absolute inset-0 flex items-center justify-center bg-black/60 backdrop-blur-xs hidden z-10">
+                <div class="w-7 h-7 border-[3px] border-neutral-800 border-t-white rounded-full animate-spin"></div>
+            </div>
+
+            <!-- Foreground Interaction & Meta Grid Layer -->
+            <div class="relative w-full h-full flex flex-col justify-between z-20 p-4 pointer-events-none">
+                
+                <!-- Tracking Metrics Header Section (Always Available) -->
+                <div class="w-full pt-1 pointer-events-auto">
+                    <div class="w-full flex gap-1.5 mb-3.5" id="story-progress-container"></div>
+
+                    <div class="w-full flex justify-between items-center">
+                        <div class="flex items-center gap-2.5">
+                            <div class="w-8 h-8 rounded-full bg-neutral-900 text-white flex items-center justify-center text-[10px] border border-neutral-700 font-bold shadow-md">CM</div>
+                            <div>
+                                <div class="text-[11px] font-bold tracking-widest text-white drop-shadow-md" id="story-category-title">CLAYTON MENDONCA</div>
+                                <div class="text-[8px] text-neutral-300 uppercase tracking-widest font-semibold opacity-90 drop-shadow-sm">Live Showcase</div>
+                            </div>
+                        </div>
+                        <!-- Close Button Top Layer Shell Interceptor -->
+                        <button onclick="closeStories()" class="text-white text-3xl p-1 opacity-70 hover:opacity-100 focus:outline-none transition-opacity cursor-pointer">&times;</button>
+                    </div>
+                </div>
+
+                <!-- Touch Control Engine (Tap Left / Tap Right / Press & Hold Interceptor Channels) -->
+                <div class="absolute top-20 bottom-24 left-0 right-0 w-full flex pointer-events-auto" 
+                     onmousedown="pauseStory()" onmouseup="resumeStory()" 
+                     ontouchstart="pauseStory()" ontouchend="resumeStory()">
+                    <div class="w-1/3 h-full cursor-pointer" onclick="storyPrev(event)"></div>
+                    <div class="w-2/3 h-full cursor-pointer" onclick="storyNext(event)"></div>
+                </div>
+
+                <!-- Responsive Contextual Call Anchor Footer -->
+                <div class="w-full pb-2 pointer-events-auto">
+                    <button onclick="closeStories(); toggleModal('inquiry-modal', true)" class="w-full bg-white text-neutral-950 font-semibold tracking-widest text-[10px] uppercase py-4 rounded-xl shadow-md active:scale-[0.98] transition-transform">
+                        Book Now
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Minimal Form Drawer Modal Layout -->
+    <div id="inquiry-modal" class="fixed inset-0 bg-neutral-950/40 z-[100] hidden flex items-end sm:items-center justify-center p-0 sm:p-4 backdrop-blur-xs transition-opacity">
+        <div class="bg-white w-full sm:max-w-lg max-h-[92vh] sm:max-h-[88vh] overflow-y-auto rounded-t-2xl sm:rounded-2xl shadow-xl animate-fade-up relative">
+            
+            <div class="w-12 h-1 bg-neutral-200 rounded-full mx-auto mt-3 sm:hidden"></div>
+            <button onclick="toggleModal('inquiry-modal', false)" class="absolute top-4 right-5 text-neutral-400 hover:text-neutral-900 text-2xl z-10 p-2 transition-colors sm:block hidden">&times;</button>
+            
+            <div class="flex justify-between items-center px-6 pt-4 pb-2 border-b border-neutral-100 sm:hidden">
+                <span class="text-[10px] uppercase tracking-widest text-neutral-400 font-bold">Event Parameters</span>
+                <button onclick="toggleModal('inquiry-modal', false)" class="text-neutral-500 text-xs font-semibold uppercase tracking-wider py-1 px-3 bg-neutral-100 rounded-full">Close</button>
+            </div>
+
+            <div class="p-6 sm:p-10 pt-4 sm:pt-10">
+                <div class="text-center sm:text-left mb-6 hidden sm:block">
+                    <h2 class="text-2xl font-semibold text-neutral-950 serif-font tracking-wide mb-1">Book the Stage</h2>
+                    <p class="text-[9px] uppercase tracking-widest text-neutral-400 font-bold">Outline your parameters below</p>
                 </div>
                 
                 <form id="booking-form" action="https://formspree.io/f/mqejvdzd" method="POST" class="space-y-4">
                     <div>
-                        <label class="block text-[10px] uppercase tracking-wider text-neutral-500 font-bold mb-1.5">Signature Name / Company *</label>
-                        <input type="text" name="name" required class="w-full bg-neutral-50/60 border border-neutral-200 rounded-lg px-4 py-3 text-neutral-900 focus:outline-none focus:border-neutral-950 focus:bg-white text-sm transition-all" placeholder="Kevin / ABC Corp">
+                        <label class="block text-[9px] uppercase tracking-wider text-neutral-400 font-bold mb-1.5">Signature Name / Company *</label>
+                        <input type="text" name="name" required class="w-full bg-neutral-50 border border-neutral-200 rounded-xl px-4 py-3.5 text-neutral-900 focus:outline-none focus:border-neutral-950 focus:bg-white text-sm transition-all" placeholder="Name or Organization">
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
-                            <label class="block text-[10px] uppercase tracking-wider text-neutral-500 font-bold mb-1.5">Email Address *</label>
-                            <input type="email" name="email" required class="w-full bg-neutral-50/60 border border-neutral-200 rounded-lg px-4 py-3 text-neutral-900 text-sm focus:outline-none focus:border-neutral-950 focus:bg-white transition-all" placeholder="partner@domain.com">
+                            <label class="block text-[9px] uppercase tracking-wider text-neutral-400 font-bold mb-1.5">Email Address *</label>
+                            <input type="email" name="email" required class="w-full bg-neutral-50 border border-neutral-200 rounded-xl px-4 py-3.5 text-neutral-900 text-sm focus:outline-none focus:border-neutral-950 focus:bg-white transition-all" placeholder="partner@domain.com">
                         </div>
                         <div>
-                            <label class="block text-[10px] uppercase tracking-wider text-neutral-500 font-bold mb-1.5">Contact Metric *</label>
-                            <input type="tel" name="phone" required class="w-full bg-neutral-50/60 border border-neutral-200 rounded-lg px-4 py-3 text-neutral-900 text-sm focus:outline-none focus:border-neutral-950 focus:bg-white transition-all" placeholder="Phone coordinates">
+                            <label class="block text-[9px] uppercase tracking-wider text-neutral-400 font-bold mb-1.5">Contact Metric *</label>
+                            <input type="tel" name="phone" required class="w-full bg-neutral-50 border border-neutral-200 rounded-xl px-4 py-3.5 text-neutral-900 text-sm focus:outline-none focus:border-neutral-950 focus:bg-white transition-all" placeholder="Phone coordinates">
                         </div>
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
-                            <label class="block text-[10px] uppercase tracking-wider text-neutral-500 font-bold mb-1.5">Canvas Setting *</label>
-                            <select name="event-type" required class="w-full bg-neutral-50/60 border border-neutral-200 rounded-lg px-4 py-3 text-neutral-900 text-sm focus:outline-none focus:border-neutral-950 focus:bg-white transition-all">
+                            <label class="block text-[9px] uppercase tracking-wider text-neutral-400 font-bold mb-1.5">Canvas Setting *</label>
+                            <select name="event-type" required class="w-full bg-neutral-50 border border-neutral-200 rounded-xl px-4 py-3.5 text-neutral-900 text-sm focus:outline-none focus:border-neutral-950 focus:bg-white transition-all appearance-none">
                                 <option value="" disabled selected>Select setting</option>
                                 <option value="Corporate">Corporate Blueprint</option>
                                 <option value="Wedding">Luxury Wedding</option>
@@ -190,109 +231,50 @@
                             </select>
                         </div>
                         <div>
-                            <label class="block text-[10px] uppercase tracking-wider text-neutral-500 font-bold mb-1.5">Calendar Date *</label>
-                            <input type="date" name="date" required class="w-full bg-neutral-50/60 border border-neutral-200 rounded-lg px-4 py-3 text-neutral-900 text-sm focus:outline-none focus:border-neutral-950 focus:bg-white transition-all">
+                            <label class="block text-[9px] uppercase tracking-wider text-neutral-400 font-bold mb-1.5">Calendar Date *</label>
+                            <input type="date" name="date" required class="w-full bg-neutral-50 border border-neutral-200 rounded-xl px-4 py-3.5 text-neutral-900 text-sm focus:outline-none focus:border-neutral-950 focus:bg-white transition-all">
                         </div>
                     </div>
                     <div>
-                        <label class="block text-[10px] uppercase tracking-wider text-neutral-500 font-bold mb-1.5">Venue Location Grid *</label>
-                        <input type="text" name="location" required class="w-full bg-neutral-50/60 border border-neutral-200 rounded-lg px-4 py-3 text-neutral-900 text-sm focus:outline-none focus:border-neutral-950 focus:bg-white transition-all" placeholder="City or Event venue name">
+                        <label class="block text-[9px] uppercase tracking-wider text-neutral-400 font-bold mb-1.5">Venue Location Grid *</label>
+                        <input type="text" name="location" required class="w-full bg-neutral-50 border border-neutral-200 rounded-xl px-4 py-3.5 text-neutral-900 text-sm focus:outline-none focus:border-neutral-950 focus:bg-white transition-all" placeholder="City or Venue name">
                     </div>
                     <div>
-                        <label class="block text-[10px] uppercase tracking-wider text-neutral-500 font-bold mb-1.5">Architectural Directives</label>
-                        <textarea name="message" rows="3" class="w-full bg-neutral-50/60 border border-neutral-200 rounded-lg px-4 py-3 text-neutral-900 text-sm resize-none focus:outline-none focus:border-neutral-950 focus:bg-white transition-all" placeholder="Outline specific audience targets or itinerary scale..."></textarea>
+                        <label class="block text-[9px] uppercase tracking-wider text-neutral-400 font-bold mb-1.5">Architectural Directives</label>
+                        <textarea name="message" rows="3" class="w-full bg-neutral-50 border border-neutral-200 rounded-xl px-4 py-3.5 text-neutral-900 text-sm resize-none focus:outline-none focus:border-neutral-950 focus:bg-white transition-all" placeholder="Outline specific audience scale or custom details..."></textarea>
                     </div>
-                    <button type="submit" id="submit-btn" class="w-full bg-neutral-950 hover:bg-neutral-900 text-white font-bold tracking-widest text-xs uppercase py-4 rounded-lg transition-all shadow-md mt-2">Transmit Architecture</button>
+                    <button type="submit" id="submit-btn" class="w-full bg-neutral-950 hover:bg-neutral-900 text-white font-semibold tracking-widest text-[11px] uppercase py-4 rounded-xl transition-all shadow-md mt-2">Transmit Architecture</button>
                 </form>
             </div>
         </div>
     </div>
 
-    <!-- Instagram Style Lightbox Modal Overhaul -->
-    <div id="story-lightbox" class="fixed inset-0 bg-[#0a0a0c] z-[150] hidden flex items-center justify-center p-0 md:p-6 select-none transition-all">
-        
-        <!-- 9:16 Aspect Ratio Locked Outer Viewport Base Container -->
-        <div class="relative w-full h-full md:h-[90vh] md:max-w-[calc(90vh*9/16)] bg-black md:rounded-2xl overflow-hidden flex flex-col justify-between shadow-2xl shadow-black/80">
-            
-            <!-- Dynamic Underlay Backdrop Blur Grid for Landscape Assets -->
-            <div id="story-bg-blur" class="absolute inset-0 bg-cover bg-center blur-2xl scale-110 opacity-40 pointer-events-none transition-all duration-300"></div>
-
-            <!-- Foreground Viewport Layer holding real aspect containers -->
-            <div class="absolute inset-0 flex items-center justify-center z-0">
-                <img id="story-image" src="" alt="Live Media Asset" class="w-full max-h-full object-contain hidden transition-all duration-300">
-                <video id="story-video" src="" playsinline webkit-playsinline class="w-full max-h-full object-contain hidden transition-all duration-300"></video>
-            </div>
-
-            <!-- Overlay Interface Grid Element Container (Layers over Media Elements) -->
-            <div class="relative w-full h-full flex flex-col justify-between z-10 p-4 pointer-events-none">
-                
-                <!-- Header Column Frame Section -->
-                <div class="w-full pt-1">
-                    <!-- Progress Tickers Grid Tracker -->
-                    <div class="w-full flex gap-1.5 mb-3.5" id="story-progress-container"></div>
-
-                    <!-- Meta Profile Header Information Track Row -->
-                    <div class="w-full flex justify-between items-center pointer-events-auto">
-                        <div class="flex items-center gap-2.5">
-                            <div class="w-8 h-8 rounded-full bg-neutral-800 text-white flex items-center justify-center text-[10px] border border-neutral-700 font-bold shadow-md">CM</div>
-                            <div>
-                                <div class="text-xs font-bold tracking-widest text-white drop-shadow-md" id="story-category-title">CLAYTON MENDONCA</div>
-                                <div class="text-[9px] text-neutral-300 uppercase tracking-widest font-semibold opacity-90 drop-shadow-sm">Portfolio</div>
-                            </div>
-                        </div>
-                        <button onclick="closeStories()" class="text-white text-3xl p-1 hover:opacity-75 focus:outline-none transition-opacity">&times;</button>
-                    </div>
-                </div>
-
-                <!-- Touch gesture dynamic split action regions -->
-                <div class="absolute top-24 bottom-24 left-0 right-0 w-full flex pointer-events-auto">
-                    <div class="w-1/4 h-full cursor-pointer" onclick="storyPrev()"></div>
-                    <div class="w-3/4 h-full cursor-pointer" onclick="storyNext()"></div>
-                </div>
-
-                <!-- Footer Call-to-action bar button anchor container -->
-                <div class="w-full pb-2 pointer-events-auto">
-                    <button onclick="closeStories(); toggleModal('inquiry-modal', true)" class="w-full bg-white text-neutral-950 font-bold tracking-widest text-[10px] uppercase py-3.5 rounded-xl shadow-xl active:scale-[0.98] transition-transform">
-                        Book Now!
-                    </button>
-                </div>
-
-            </div>
-
-            <!-- Loading Spinner Component element overlay wrapper -->
-            <div id="story-spinner" class="absolute inset-0 flex items-center justify-center bg-black/60 backdrop-blur-xs hidden z-20">
-                <div class="w-8 h-8 border-4 border-neutral-800 border-t-white rounded-full animate-spin"></div>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- Balanced Structural Footer Layout -->
-    <footer class="container mx-auto px-6 sm:px-10 py-8 border-t border-neutral-200/60 flex flex-col sm:flex-row justify-between items-center gap-4 relative z-10 text-[10px] tracking-widest text-neutral-400 uppercase font-bold">
+    <!-- Structural Footer Layout -->
+    <footer class="w-full px-6 sm:px-12 py-8 border-t border-neutral-200/50 flex flex-col sm:flex-row justify-between items-center gap-4 max-w-7xl mx-auto relative z-10 text-[9px] tracking-widest text-neutral-400 uppercase font-bold">
         <div>&copy; 2026 Clayton Mendonca</div>
         <div class="flex gap-6 text-base items-center">
-            <a href="tel:+919167015138" class="sm:hidden text-neutral-500 hover:text-black"><i class="fa-solid fa-phone"></i></a>
-            <a href="https://instagram.com/emceeclayton" target="_blank" rel="noopener noreferrer" class="text-neutral-500 hover:text-neutral-900 transition-colors flex items-center gap-2 font-bold tracking-wider text-xs">
-                <i class="fa-brands fa-instagram text-base text-neutral-800"></i>
+            <a href="tel:+919167015138" class="sm:hidden text-neutral-400 hover:text-black"><i class="fa-solid fa-phone"></i></a>
+            <a href="https://instagram.com/emceeclayton" target="_blank" rel="noopener noreferrer" class="text-neutral-400 hover:text-neutral-900 transition-colors flex items-center gap-2 font-bold tracking-wider text-xs">
+                <i class="fa-brands fa-instagram text-base text-neutral-500"></i>
             </a>
         </div>
         <div class="flex items-center">
-            <img src="mclogo.png" alt="Logo Anchor" class="h-4 w-auto opacity-30">
+            <img src="mclogo.png" alt="Logo Anchor" class="h-4 w-auto opacity-20">
         </div>
     </footer>
 
     <script>
         const highlightData = {
             corporate: [
-                { type: 'image', url: 'media/cop1.jpg', duration: 7000 },
-                { type: 'image', url: 'media/cop2.jpg', duration: 7000 },
-                { type: 'image', url: 'media/booknow.jpeg', duration: 7000 }
+                { type: 'image', url: 'media/cop1.jpg', duration: 5000 },
+                { type: 'image', url: 'media/cop2.jpg', duration: 5000 },
+                { type: 'image', url: 'media/booknow.jpeg', duration: 5000 }
             ],
             birthday: [
-                { type: 'image', url: 'media/bd1.jpg', duration: 4000 },
+                { type: 'image', url: 'media/bd1.jpg', duration: 5000 },
                 { type: 'video', url: 'media/bd2.mp4', duration: 51000 },
                 { type: 'video', url: 'media/bd3.mp4', duration: 9000 },
-                { type: 'image', url: 'media/booknow.jpeg', duration: 7000 }
+                { type: 'image', url: 'media/booknow.jpeg', duration: 5000 }
             ],
             Anniversary: [
                 { type: 'image', url: 'media/a1.jpg', duration: 4000 },
@@ -300,12 +282,12 @@
                 { type: 'video', url: 'media/anni2.mp4', duration: 50000 },
                 { type: 'image', url: 'media/a33.jpg', duration: 4000 },
                 { type: 'image', url: 'media/a4.jpg', duration: 4000 },
-                { type: 'image', url: 'media/booknow.jpeg', duration: 7000 }           
+                { type: 'image', url: 'media/booknow.jpeg', duration: 5000 }           
             ],
             Communion: [
                 { type: 'image', url: 'media/comm1.jpg', duration: 4000 },
                 { type: 'video', url: 'media/comm2.mp4', duration: 36000 },
-                { type: 'image', url: 'media/booknow.jpeg', duration: 7000 }           
+                { type: 'image', url: 'media/booknow.jpeg', duration: 5000 }            
             ]
         };
 
@@ -313,7 +295,10 @@
         let currentStoryIdx = 0;
         let storyTimer = null;
         let startTime = 0;
+        let elapsedBeforePause = 0;
         let totalDuration = 0;
+        let isPaused = false;
+        let isAssetLoaded = false;
 
         function toggleModal(id, show) {
             const el = document.getElementById(id);
@@ -326,14 +311,18 @@
             if(!currentActiveGroup || currentActiveGroup.length === 0) return;
             
             currentStoryIdx = 0;
-            document.getElementById('story-category-title').innerText = "CLAYTON | " + category.toUpperCase();
+            isPaused = false;
+            elapsedBeforePause = 0;
+            isAssetLoaded = false;
+            
+            document.getElementById('story-category-title').innerText = category.toUpperCase();
             
             const progressContainer = document.getElementById('story-progress-container');
             progressContainer.innerHTML = '';
             currentActiveGroup.forEach(() => {
                 const seg = document.createElement('div');
                 seg.className = 'progress-segment';
-                seg.innerHTML = '<div class="progress-fill h-full transition-all"></div>';
+                seg.innerHTML = '<div class="progress-fill h-full"></div>';
                 progressContainer.appendChild(seg);
             });
 
@@ -344,6 +333,9 @@
 
         function renderCurrentStory() {
             cancelAnimationFrame(storyTimer);
+            elapsedBeforePause = 0;
+            isAssetLoaded = false;
+            
             const media = currentActiveGroup[currentStoryIdx];
             const imgEl = document.getElementById('story-image');
             const vidEl = document.getElementById('story-video');
@@ -365,34 +357,41 @@
                 imgEl.src = media.url;
                 bgBlur.style.backgroundImage = `url('${media.url}')`;
                 imgEl.onload = () => {
+                    isAssetLoaded = true;
                     spinner.classList.add('hidden');
                     imgEl.classList.remove('hidden');
-                    startProgressAnimation(media.duration);
+                    if (!isPaused) startProgressAnimation(media.duration);
                 };
             } else if (media.type === 'video') {
                 vidEl.src = media.url;
                 vidEl.load();
                 vidEl.oncanplaythrough = () => {
+                    isAssetLoaded = true;
                     spinner.classList.add('hidden');
                     vidEl.classList.remove('hidden');
-                    bgBlur.style.backgroundImage = 'none'; // Clear bg blur for native video tracking frame
+                    bgBlur.style.backgroundImage = 'none';
                     vidEl.muted = false;
-                    vidEl.play().catch(()=>{});
                     
-                    const actualDuration = (vidEl.duration && !isNaN(vidEl.duration)) ? vidEl.duration * 1000 : media.duration;
-                    startProgressAnimation(actualDuration);
+                    if (!isPaused) {
+                        vidEl.play().catch(()=>{});
+                        const actualDuration = (vidEl.duration && !isNaN(vidEl.duration)) ? vidEl.duration * 1000 : media.duration;
+                        startProgressAnimation(actualDuration);
+                    }
                 };
             }
         }
 
         function startProgressAnimation(duration) {
-            const fills = document.querySelectorAll('#story-progress-container .progress-fill');
-            const activeFill = fills[currentStoryIdx];
             totalDuration = duration;
-            startTime = performance.now();
+            startTime = performance.now() - elapsedBeforePause;
             
             function step() {
+                if (isPaused || !isAssetLoaded) return;
+                
+                const fills = document.querySelectorAll('#story-progress-container .progress-fill');
+                const activeFill = fills[currentStoryIdx];
                 if (!activeFill) return;
+
                 const elapsed = performance.now() - startTime;
                 const progress = Math.min((elapsed / totalDuration) * 100, 100);
                 activeFill.style.width = progress + '%';
@@ -406,7 +405,34 @@
             storyTimer = requestAnimationFrame(step);
         }
 
-        function storyNext() {
+        function pauseStory() {
+            if (isPaused || !isAssetLoaded) return;
+            isPaused = true;
+            cancelAnimationFrame(storyTimer);
+            elapsedBeforePause = performance.now() - startTime;
+            
+            const vidEl = document.getElementById('story-video');
+            if (currentActiveGroup[currentStoryIdx].type === 'video') {
+                vidEl.pause();
+            }
+        }
+
+        function resumeStory() {
+            if (!isPaused) return;
+            isPaused = false;
+            
+            if (isAssetLoaded) {
+                const vidEl = document.getElementById('story-video');
+                if (currentActiveGroup[currentStoryIdx].type === 'video') {
+                    vidEl.play().catch(()=>{});
+                }
+                startProgressAnimation(totalDuration);
+            }
+        }
+
+        function storyNext(e) {
+            if (e) e.stopPropagation();
+            if (!isAssetLoaded) return; // Ignore taps while asset is fetching
             cancelAnimationFrame(storyTimer);
             if (currentStoryIdx < currentActiveGroup.length - 1) {
                 currentStoryIdx++;
@@ -416,18 +442,22 @@
             }
         }
 
-        function storyPrev() {
+        function storyPrev(e) {
+            if (e) e.stopPropagation();
             cancelAnimationFrame(storyTimer);
             if (currentStoryIdx > 0) {
                 currentStoryIdx--;
                 renderCurrentStory();
             } else {
-                renderCurrentStory(); 
+                // If on the first story and user taps back, return safely to home page dashboard
+                closeStories();
             }
         }
 
         function closeStories() {
             cancelAnimationFrame(storyTimer);
+            isPaused = false;
+            isAssetLoaded = false;
             const vidEl = document.getElementById('story-video');
             vidEl.pause();
             document.getElementById('story-lightbox').classList.add('hidden');
@@ -438,20 +468,20 @@
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
             btn.disabled = true; btn.innerText = "TRANSMITTING INQUIRY..";
-            btn.className = "w-full bg-neutral-200 text-neutral-400 font-bold tracking-widest text-xs uppercase py-4 rounded-lg cursor-not-allowed";
+            btn.className = "w-full bg-neutral-100 text-neutral-400 font-bold tracking-widest text-xs uppercase py-4 rounded-xl cursor-not-allowed";
             try {
                 const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: {'Accept': 'application/json'}});
                 if(res.ok) {
-                    btn.innerText = "INQUIRY TRANSMITTED SUCCESSFULLY"; btn.className = "w-full bg-emerald-700 text-white font-bold tracking-widest text-xs uppercase py-4 rounded-lg";
+                    btn.innerText = "INQUIRY TRANSMITTED SUCCESSFULLY"; btn.className = "w-full bg-emerald-700 text-white font-bold tracking-widest text-xs uppercase py-4 rounded-xl";
                     form.reset();
                     setTimeout(() => { 
                         toggleModal('inquiry-modal', false); 
                         btn.disabled = false; btn.innerText = "Transmit Architecture"; 
-                        btn.className = "w-full bg-neutral-950 hover:bg-neutral-900 text-white font-bold tracking-widest text-xs uppercase py-4 rounded-lg transition-all shadow-md"; 
+                        btn.className = "w-full bg-neutral-950 hover:bg-neutral-900 text-white font-semibold tracking-widest text-[11px] uppercase py-4 rounded-xl transition-all shadow-md"; 
                     }, 3000);
                 } else { throw new Error(); }
             } catch { 
-                btn.innerText = "Submission Failed. Please Retry."; btn.className = "w-full bg-red-600 text-white font-bold tracking-widest text-xs uppercase py-4 rounded-lg";
+                btn.innerText = "Submission Failed. Please Retry."; btn.className = "w-full bg-red-600 text-white font-bold tracking-widest text-xs uppercase py-4 rounded-xl";
                 btn.disabled = false; 
             }
         });
