@@ -44,6 +44,13 @@
 
         .progress-segment { background-color: rgba(255, 255, 255, 0.25); height: 2px; border-radius: 2px; overflow: hidden; flex-grow: 1; }
         .progress-fill { background-color: #ffffff; height: 100%; width: 0%; }
+        
+        .lightbox-container {
+            transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .lightbox-container.dragging {
+            transition: none;
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between overflow-x-hidden selection:bg-neutral-900 selection:text-white">
@@ -76,43 +83,55 @@
 
         <div class="w-full max-w-2xl mx-auto grid grid-cols-2 gap-4 px-2">
             
-            <button onclick="openStories('corporate')" class="group relative bg-white border border-neutral-200/60 p-5 rounded-2xl text-left flex flex-col justify-between h-28 transition-all hover:border-neutral-950 active:scale-[0.98] shadow-2xs">
-                <div class="w-7 h-7 bg-neutral-50 border border-neutral-100 rounded-lg flex items-center justify-center text-neutral-600 group-hover:bg-neutral-950 group-hover:text-white transition-colors">
+            <!-- Corporate Card -->
+            <button onclick="openStories('corporate')" class="group relative overflow-hidden bg-neutral-900 p-5 rounded-2xl text-left flex flex-col justify-between h-28 transition-all hover:scale-[1.01] active:scale-[0.98] shadow-md border border-neutral-800">
+                <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60 group-hover:opacity-75 group-hover:scale-105 transition-all duration-500 mix-blend-luminosity" style="background-image: url('media/cop1.jpg');"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-0"></div>
+                <div class="w-7 h-7 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg flex items-center justify-center text-white relative z-10">
                     <i class="fa-solid fa-building text-xs"></i>
                 </div>
-                <div>
-                    <h4 class="text-xs font-bold tracking-widest uppercase text-neutral-850">Corporate</h4>
-                    <span class="block text-[9px] text-neutral-400 font-medium tracking-wider mt-0.5 group-hover:text-neutral-600">See Images</span>
+                <div class="relative z-10">
+                    <h4 class="text-xs font-bold tracking-widest uppercase text-white">Corporate</h4>
+                    <span class="block text-[9px] text-neutral-300 font-medium tracking-wider mt-0.5 opacity-90">See Portfolio</span>
                 </div>
             </button>
 
-            <button onclick="openStories('Communion')" class="group relative bg-white border border-neutral-200/60 p-5 rounded-2xl text-left flex flex-col justify-between h-28 transition-all hover:border-neutral-950 active:scale-[0.98] shadow-2xs">
-                <div class="w-7 h-7 bg-neutral-50 border border-neutral-100 rounded-lg flex items-center justify-center text-neutral-600 group-hover:bg-neutral-950 group-hover:text-white transition-colors">
+            <!-- Communion Card -->
+            <button onclick="openStories('Communion')" class="group relative overflow-hidden bg-neutral-900 p-5 rounded-2xl text-left flex flex-col justify-between h-28 transition-all hover:scale-[1.01] active:scale-[0.98] shadow-md border border-neutral-800">
+                <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60 group-hover:opacity-75 group-hover:scale-105 transition-all duration-500 mix-blend-luminosity" style="background-image: url('media/comm1.jpg');"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-0"></div>
+                <div class="w-7 h-7 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg flex items-center justify-center text-white relative z-10">
                     <i class="fa-solid fa-dove text-xs"></i>
                 </div>
-                <div>
-                    <h4 class="text-xs font-bold tracking-widest uppercase text-neutral-850">Communion</h4>
-                    <span class="block text-[9px] text-neutral-400 font-medium tracking-wider mt-0.5 group-hover:text-neutral-600">See Images</span>
+                <div class="relative z-10">
+                    <h4 class="text-xs font-bold tracking-widest uppercase text-white">Communion</h4>
+                    <span class="block text-[9px] text-neutral-300 font-medium tracking-wider mt-0.5 opacity-90">See Portfolio</span>
                 </div>
             </button>
 
-            <button onclick="openStories('birthday')" class="group relative bg-white border border-neutral-200/60 p-5 rounded-2xl text-left flex flex-col justify-between h-28 transition-all hover:border-neutral-950 active:scale-[0.98] shadow-2xs">
-                <div class="w-7 h-7 bg-neutral-50 border border-neutral-100 rounded-lg flex items-center justify-center text-neutral-600 group-hover:bg-neutral-950 group-hover:text-white transition-colors">
+            <!-- Birthday Card -->
+            <button onclick="openStories('birthday')" class="group relative overflow-hidden bg-neutral-900 p-5 rounded-2xl text-left flex flex-col justify-between h-28 transition-all hover:scale-[1.01] active:scale-[0.98] shadow-md border border-neutral-800">
+                <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60 group-hover:opacity-75 group-hover:scale-105 transition-all duration-500 mix-blend-luminosity" style="background-image: url('media/bd1.jpg');"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-0"></div>
+                <div class="w-7 h-7 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg flex items-center justify-center text-white relative z-10">
                     <i class="fa-solid fa-heart text-xs"></i>
                 </div>
-                <div>
-                    <h4 class="text-xs font-bold tracking-widest uppercase text-neutral-850">Birthday</h4>
-                    <span class="block text-[9px] text-neutral-400 font-medium tracking-wider mt-0.5 group-hover:text-neutral-600">See Images</span>
+                <div class="relative z-10">
+                    <h4 class="text-xs font-bold tracking-widest uppercase text-white">Birthday</h4>
+                    <span class="block text-[9px] text-neutral-300 font-medium tracking-wider mt-0.5 opacity-90">See Portfolio</span>
                 </div>
             </button>
 
-            <button onclick="openStories('Anniversary')" class="group relative bg-white border border-neutral-200/60 p-5 rounded-2xl text-left flex flex-col justify-between h-28 transition-all hover:border-neutral-950 active:scale-[0.98] shadow-2xs">
-                <div class="w-7 h-7 bg-neutral-50 border border-neutral-100 rounded-lg flex items-center justify-center text-neutral-600 group-hover:bg-neutral-950 group-hover:text-white transition-colors">
+            <!-- Anniversary Card -->
+            <button onclick="openStories('Anniversary')" class="group relative overflow-hidden bg-neutral-900 p-5 rounded-2xl text-left flex flex-col justify-between h-28 transition-all hover:scale-[1.01] active:scale-[0.98] shadow-md border border-neutral-800">
+                <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60 group-hover:opacity-75 group-hover:scale-105 transition-all duration-500 mix-blend-luminosity" style="background-image: url('media/a1.jpg');"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-0"></div>
+                <div class="w-7 h-7 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg flex items-center justify-center text-white relative z-10">
                     <i class="fa-solid fa-cake-candles text-xs"></i>
                 </div>
-                <div>
-                    <h4 class="text-xs font-bold tracking-widest uppercase text-neutral-850">Anniversary</h4>
-                    <span class="block text-[9px] text-neutral-400 font-medium tracking-wider mt-0.5 group-hover:text-neutral-600">See Images</span>
+                <div class="relative z-10">
+                    <h4 class="text-xs font-bold tracking-widest uppercase text-white">Anniversary</h4>
+                    <span class="block text-[9px] text-neutral-300 font-medium tracking-wider mt-0.5 opacity-90">See Portfolio</span>
                 </div>
             </button>
 
@@ -132,7 +151,7 @@
 
     <div id="story-lightbox" class="fixed inset-0 bg-[#0a0a0c] z-[150] hidden flex items-center justify-center p-0 md:p-6 select-none transition-all">
         
-        <div class="relative w-full h-full md:h-[90vh] md:max-w-[calc(90vh*9/16)] bg-black md:rounded-2xl overflow-hidden flex flex-col justify-between shadow-2xl">
+        <div id="story-card-wrapper" class="lightbox-container relative w-full h-full md:h-[90vh] md:max-w-[calc(90vh*9/16)] bg-black md:rounded-2xl overflow-hidden flex flex-col justify-between shadow-2xl">
             
             <div id="story-bg-blur" class="absolute inset-0 bg-cover bg-center blur-2xl scale-110 opacity-30 pointer-events-none transition-all duration-300"></div>
 
@@ -180,6 +199,7 @@
         </div>
     </div>
 
+    <!-- CLEANED & SOBER INQUIRY MODAL -->
     <div id="inquiry-modal" class="fixed inset-0 bg-neutral-950/40 z-[100] hidden flex items-end sm:items-center justify-center p-0 sm:p-4 backdrop-blur-xs transition-opacity">
         <div class="bg-white w-full sm:max-w-lg max-h-[92vh] sm:max-h-[88vh] overflow-y-auto rounded-t-2xl sm:rounded-2xl shadow-xl animate-fade-up relative">
             
@@ -187,57 +207,57 @@
             <button onclick="toggleModal('inquiry-modal', false)" class="absolute top-4 right-5 text-neutral-400 hover:text-neutral-900 text-2xl z-10 p-2 transition-colors sm:block hidden">&times;</button>
             
             <div class="flex justify-between items-center px-6 pt-4 pb-2 border-b border-neutral-100 sm:hidden">
-                <span class="text-[10px] uppercase tracking-widest text-neutral-400 font-bold">Event Parameters</span>
+                <span class="text-[10px] uppercase tracking-widest text-neutral-400 font-bold">Booking Inquiry</span>
                 <button onclick="toggleModal('inquiry-modal', false)" class="text-neutral-500 text-xs font-semibold uppercase tracking-wider py-1 px-3 bg-neutral-100 rounded-full">Close</button>
             </div>
 
             <div class="p-6 sm:p-10 pt-4 sm:pt-10">
                 <div class="text-center sm:text-left mb-6 hidden sm:block">
-                    <h2 class="text-2xl font-semibold text-neutral-950 serif-font tracking-wide mb-1">Book the Stage</h2>
-                    <p class="text-[9px] uppercase tracking-widest text-neutral-400 font-bold">Outline your parameters below</p>
+                    <h2 class="text-2xl font-semibold text-neutral-950 serif-font tracking-wide mb-1">Book Event</h2>
+                    <p class="text-[9px] uppercase tracking-widest text-neutral-400 font-bold">Fill out the event details below</p>
                 </div>
                 
                 <form id="booking-form" action="https://formspree.io/f/mqejvdzd" method="POST" class="space-y-4">
                     <div>
-                        <label class="block text-[9px] uppercase tracking-wider text-neutral-400 font-bold mb-1.5">Signature Name / Company *</label>
-                        <input type="text" name="name" required class="w-full bg-neutral-50 border border-neutral-200 rounded-xl px-4 py-3.5 text-neutral-900 focus:outline-none focus:border-neutral-950 focus:bg-white text-sm transition-all" placeholder="Name or Organization">
+                        <label class="block text-[9px] uppercase tracking-wider text-neutral-400 font-bold mb-1.5">Full Name / Company Name *</label>
+                        <input type="text" name="name" required class="w-full bg-neutral-50 border border-neutral-200 rounded-xl px-4 py-3.5 text-neutral-900 focus:outline-none focus:border-neutral-950 focus:bg-white text-sm transition-all" placeholder="Enter your full name or company">
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
                             <label class="block text-[9px] uppercase tracking-wider text-neutral-400 font-bold mb-1.5">Email Address *</label>
-                            <input type="email" name="email" required class="w-full bg-neutral-50 border border-neutral-200 rounded-xl px-4 py-3.5 text-neutral-900 text-sm focus:outline-none focus:border-neutral-950 focus:bg-white transition-all" placeholder="partner@domain.com">
+                            <input type="email" name="email" required class="w-full bg-neutral-50 border border-neutral-200 rounded-xl px-4 py-3.5 text-neutral-900 text-sm focus:outline-none focus:border-neutral-950 focus:bg-white transition-all" placeholder="name@domain.com">
                         </div>
                         <div>
-                            <label class="block text-[9px] uppercase tracking-wider text-neutral-400 font-bold mb-1.5">Contact Metric *</label>
-                            <input type="tel" name="phone" required class="w-full bg-neutral-50 border border-neutral-200 rounded-xl px-4 py-3.5 text-neutral-900 text-sm focus:outline-none focus:border-neutral-950 focus:bg-white transition-all" placeholder="Phone coordinates">
+                            <label class="block text-[9px] uppercase tracking-wider text-neutral-400 font-bold mb-1.5">Phone Number *</label>
+                            <input type="tel" name="phone" required class="w-full bg-neutral-50 border border-neutral-200 rounded-xl px-4 py-3.5 text-neutral-900 text-sm focus:outline-none focus:border-neutral-950 focus:bg-white transition-all" placeholder="Enter contact number">
                         </div>
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
-                            <label class="block text-[9px] uppercase tracking-wider text-neutral-400 font-bold mb-1.5">Canvas Setting *</label>
+                            <label class="block text-[9px] uppercase tracking-wider text-neutral-400 font-bold mb-1.5">Event Type *</label>
                             <select name="event-type" required class="w-full bg-neutral-50 border border-neutral-200 rounded-xl px-4 py-3.5 text-neutral-900 text-sm focus:outline-none focus:border-neutral-950 focus:bg-white transition-all appearance-none">
-                                <option value="" disabled selected>Select setting</option>
-                                <option value="Corporate">Corporate Blueprint</option>
-                                <option value="Wedding">Luxury Wedding</option>
-                                <option value="Family">Bespoke Celebratory</option>
-                                <option value="Social">Live Festival / Concert</option>
-                                <option value="Other">Other Custom Format</option>
+                                <option value="" disabled selected>Select event type</option>
+                                <option value="Corporate">Corporate Event</option>
+                                <option value="Wedding">Wedding</option>
+                                <option value="Family">Birthday / Family Event</option>
+                                <option value="Social">Concert / Public Festival</option>
+                                <option value="Other">Other</option>
                             </select>
                         </div>
                         <div>
-                            <label class="block text-[9px] uppercase tracking-wider text-neutral-400 font-bold mb-1.5">Calendar Date *</label>
+                            <label class="block text-[9px] uppercase tracking-wider text-neutral-400 font-bold mb-1.5">Event Date *</label>
                             <input type="date" name="date" required class="w-full bg-neutral-50 border border-neutral-200 rounded-xl px-4 py-3.5 text-neutral-900 text-sm focus:outline-none focus:border-neutral-950 focus:bg-white transition-all">
                         </div>
                     </div>
                     <div>
-                        <label class="block text-[9px] uppercase tracking-wider text-neutral-400 font-bold mb-1.5">Venue Location Grid *</label>
-                        <input type="text" name="location" required class="w-full bg-neutral-50 border border-neutral-200 rounded-xl px-4 py-3.5 text-neutral-900 text-sm focus:outline-none focus:border-neutral-950 focus:bg-white transition-all" placeholder="City or Venue name">
+                        <label class="block text-[9px] uppercase tracking-wider text-neutral-400 font-bold mb-1.5">Venue Location *</label>
+                        <input type="text" name="location" required class="w-full bg-neutral-50 border border-neutral-200 rounded-xl px-4 py-3.5 text-neutral-900 text-sm focus:outline-none focus:border-neutral-950 focus:bg-white transition-all" placeholder="City or Venue Name">
                     </div>
                     <div>
-                        <label class="block text-[9px] uppercase tracking-wider text-neutral-400 font-bold mb-1.5">Architectural Directives</label>
-                        <textarea name="message" rows="3" class="w-full bg-neutral-50 border border-neutral-200 rounded-xl px-4 py-3.5 text-neutral-900 text-sm resize-none focus:outline-none focus:border-neutral-950 focus:bg-white transition-all" placeholder="Outline specific audience scale or custom details..."></textarea>
+                        <label class="block text-[9px] uppercase tracking-wider text-neutral-400 font-bold mb-1.5">Additional Details</label>
+                        <textarea name="message" rows="3" class="w-full bg-neutral-50 border border-neutral-200 rounded-xl px-4 py-3.5 text-neutral-900 text-sm resize-none focus:outline-none focus:border-neutral-950 focus:bg-white transition-all" placeholder="Provide any other relevant details regarding the crowd scale or timeline..."></textarea>
                     </div>
-                    <button type="submit" id="submit-btn" class="w-full bg-neutral-950 hover:bg-neutral-900 text-white font-semibold tracking-widest text-[11px] uppercase py-4 rounded-xl transition-all shadow-md mt-2">Transmit Architecture</button>
+                    <button type="submit" id="submit-btn" class="w-full bg-neutral-950 hover:bg-neutral-900 text-white font-semibold tracking-widest text-[11px] uppercase py-4 rounded-xl transition-all shadow-md mt-2">Submit Booking Inquiry</button>
                 </form>
             </div>
         </div>
@@ -293,6 +313,12 @@
         let isPaused = false;
         let isAssetLoaded = false;
 
+        let startY = 0;
+        let currentY = 0;
+        let isDragging = false;
+        const cardWrapper = document.getElementById('story-card-wrapper');
+        const lightboxEl = document.getElementById('story-lightbox');
+
         function toggleModal(id, show) {
             const el = document.getElementById(id);
             el.classList.toggle('hidden', !show);
@@ -319,8 +345,11 @@
                 progressContainer.appendChild(seg);
             });
 
-            document.getElementById('story-lightbox').classList.remove('hidden');
+            lightboxEl.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
+            
+            history.pushState({ storyActive: true }, '');
+
             renderCurrentStory();
         }
 
@@ -442,35 +471,85 @@
                 currentStoryIdx--;
                 renderCurrentStory();
             } else {
-                // Returns straight to home landing section rather than forcing a route pop drop
                 closeStories();
             }
         }
 
-        function closeStories(e) {
+        function closeStories(e, triggeredByHistory = true) {
             if (e) e.stopPropagation();
             cancelAnimationFrame(storyTimer);
             isPaused = false;
             isAssetLoaded = false;
             const vidEl = document.getElementById('story-video');
             vidEl.pause();
-            document.getElementById('story-lightbox').classList.add('hidden');
+            lightboxEl.classList.add('hidden');
             document.body.style.overflow = 'auto';
+
+            cardWrapper.style.transform = 'translateY(0px)';
+            lightboxEl.style.opacity = '1';
+
+            if (triggeredByHistory && history.state && history.state.storyActive) {
+                history.back();
+            }
         }
+
+        window.addEventListener('popstate', (e) => {
+            if (!lightboxEl.classList.contains('hidden')) {
+                closeStories(null, false);
+            }
+        });
+
+        lightboxEl.addEventListener('touchstart', (e) => {
+            if (e.target.closest('button') || e.target.closest('a')) return;
+            
+            startY = e.touches[0].clientY;
+            isDragging = true;
+            cardWrapper.classList.add('dragging');
+            pauseStory();
+        }, { passive: true });
+
+        lightboxEl.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            currentY = e.touches[0].clientY;
+            const diffY = currentY - startY;
+
+            if (diffY > 0) {
+                cardWrapper.style.transform = `translateY(${diffY}px)`;
+                const opacityPercent = Math.max(0.3, 1 - (diffY / window.innerHeight));
+                lightboxEl.style.opacity = opacityPercent;
+            }
+        }, { passive: true });
+
+        lightboxEl.addEventListener('touchend', (e) => {
+            if (!isDragging) return;
+            isDragging = false;
+            cardWrapper.classList.remove('dragging');
+
+            const finalDiffY = currentY - startY;
+            if (finalDiffY > 140) {
+                closeStories();
+            } else {
+                cardWrapper.style.transform = 'translateY(0px)';
+                lightboxEl.style.opacity = '1';
+                resumeStory();
+            }
+            startY = 0;
+            currentY = 0;
+        });
 
         const form = document.getElementById('booking-form'), btn = document.getElementById('submit-btn');
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
-            btn.disabled = true; btn.innerText = "TRANSMITTING INQUIRY..";
+            btn.disabled = true; btn.innerText = "SUBMITTING INQUIRY..";
             btn.className = "w-full bg-neutral-100 text-neutral-400 font-bold tracking-widest text-xs uppercase py-4 rounded-xl cursor-not-allowed";
             try {
                 const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: {'Accept': 'application/json'}});
                 if(res.ok) {
-                    btn.innerText = "INQUIRY TRANSMITTED SUCCESSFULLY"; btn.className = "w-full bg-emerald-700 text-white font-bold tracking-widest text-xs uppercase py-4 rounded-xl";
+                    btn.innerText = "INQUIRY SUBMITTED SUCCESSFULLY"; btn.className = "w-full bg-emerald-700 text-white font-bold tracking-widest text-xs uppercase py-4 rounded-xl";
                     form.reset();
                     setTimeout(() => { 
                         toggleModal('inquiry-modal', false); 
-                        btn.disabled = false; btn.innerText = "Transmit Architecture"; 
+                        btn.disabled = false; btn.innerText = "Submit Booking Inquiry"; 
                         btn.className = "w-full bg-neutral-950 hover:bg-neutral-900 text-white font-semibold tracking-widest text-[11px] uppercase py-4 rounded-xl transition-all shadow-md"; 
                     }, 3000);
                 } else { throw new Error(); }
