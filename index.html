@@ -51,6 +51,15 @@
         .lightbox-container.dragging {
             transition: none;
         }
+
+        /* Sophisticated pulsing transition for custom logo loader */
+        .logo-pulse {
+            animation: pulseLogo 1.6s ease-in-out infinite alternate;
+        }
+        @keyframes pulseLogo {
+            0% { transform: scale(0.92); opacity: 0.65; }
+            100% { transform: scale(1.08); opacity: 1; }
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between overflow-x-hidden selection:bg-neutral-900 selection:text-white">
@@ -160,9 +169,12 @@
                 <video id="story-video" src="" playsinline webkit-playsinline class="w-full max-h-full object-contain hidden transition-all duration-300"></video>
             </div>
 
-            <div id="story-spinner" class="absolute inset-0 flex items-center justify-center bg-black/60 backdrop-blur-xs hidden z-10">
-                <div class="w-7 h-7 border-[3px] border-neutral-800 border-t-white rounded-full animate-spin"></div>
-            </div>
+            <!-- CUSTOM LOGO PULSE LOADER MODIFICATION -->
+           <!-- SPINNER CONTAINER WITH UPDATED COMPACT VERTICAL FLEX ARCHITECTURE -->
+<div id="story-spinner" class="absolute inset-0 flex flex-col items-center justify-center bg-black/60 backdrop-blur-xs hidden z-10 gap-3">
+    <img src="mclogo1.png" alt="Loading..." class="w-10 h-auto logo-pulse brightness-200">
+    <h6 class="text-[10px] uppercase tracking-[0.25em] text-neutral-300 font-semibold opacity-80">Getting loaded</h6>
+</div>
 
             <div class="relative w-full h-full flex flex-col justify-between z-20 p-4 pointer-events-none">
                 
@@ -199,7 +211,6 @@
         </div>
     </div>
 
-    <!-- CLEANED & SOBER INQUIRY MODAL -->
     <div id="inquiry-modal" class="fixed inset-0 bg-neutral-950/40 z-[100] hidden flex items-end sm:items-center justify-center p-0 sm:p-4 backdrop-blur-xs transition-opacity">
         <div class="bg-white w-full sm:max-w-lg max-h-[92vh] sm:max-h-[88vh] overflow-y-auto rounded-t-2xl sm:rounded-2xl shadow-xl animate-fade-up relative">
             
@@ -272,7 +283,7 @@
             </a>
         </div>
         <div class="flex items-center">
-            <img src="mclogo.png" alt="Logo Anchor" class="h-4 w-auto opacity-20">
+            <img src="mclogo1.png" alt="Logo Anchor" class="h-4 w-auto opacity-80">
         </div>
     </footer>
 
